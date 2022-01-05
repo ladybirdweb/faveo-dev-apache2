@@ -14,7 +14,7 @@ Obtain the IP address of faveoapp container.
 ```sh
 docker inspect faveoapp
 ```
-Edit hosts file and map the IP to faveo.localhost.
+Edit hosts file and map the IP to faveo.localhost. The container is configured with Self Signed SSL certificates for the domainname faveo.localhost. This cannot be changed.
 
 You can visit the site in browser using the URL https://faveo.localhost
 
