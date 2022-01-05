@@ -1,0 +1,24 @@
+version: "3.2"
+services:
+  apache:
+    image: ladybird/faveo-dev-apache2
+    container_name: faveoapp
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./html:/var/www/html/
+    restart: always
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: myrootpassword
+      MYSQL_DATABASE: faveodb
+      MYSQL_USER: faveoUser
+      MYSQL_PASSWORD: faveoPass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+
