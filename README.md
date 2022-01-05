@@ -18,7 +18,7 @@ Edit hosts file and map the IP to faveo.localhost. The container is configured w
 
 You can visit the site in browser using the URL https://faveo.localhost
 
-The database details are mentioned in the docker-compose file as Environment variable. Either use the deault credentials or you can modify the docker-compose accordingly.
+The database details are mentioned in the docker-compose file as Environment variable. Either use the deault credentials or you can modify the docker-compose accordingly. For Database Host you can use the container name "mysql". 
 
 To enter inside the container
 
