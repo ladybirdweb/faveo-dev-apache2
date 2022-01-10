@@ -5,30 +5,30 @@ A pretty simplified Docker Compose workflow that sets up a network of containers
 ___
 To get started, make sure you have Docker and docker-compose installed on your system, and then clone this repository.
 
-Next, navigate in your terminal to the directory you cloned this, and create 2 directories html and mysql repectively. Upload the faveo files in html directory. Spin up the containers for the web server by running docker-compose up -d 
+Next, navigate in your terminal to the directory you cloned this, and create 2 directories html and mysql respectively. Upload the faveo files in the HTML directory. Spin up the containers for the webserver by running docker-compose up -d
 
-Run the below command to spin apache and mysql containers
+Run the below command to spin apache and MySQL containers
 
 ```sh 
 docker-compose up -d
 ```
-The above command will spin up 2 containers apache and mysql and this will mount the directories that you created before i.e, html and mysql respectively for persistant storage. Whatever the changes you make  html directory like create, delete or edit files that will be reflected inside the containers as well. 
+The above command will spin up 2 containers apache and MySQL and this will mount the directories that you created before i.e, html and mysql respectively for persistent storage. Whatever changes you make in the HTML directory like create, delete or edit files will be reflected inside the containers as well.
 
-To visit the Faveo in the browser you have to find the IP address for apache container for that run the below command.
+To visit the Faveo in the browser you have to find the IP address for the apache container.
 
-Obtain the IP address of faveoapp container.
+Run the below command to obtain the IP address of faveoapp container.
 
 ```sh
 docker inspect faveoapp
 ```
-Copy the IP Address and edit hosts file of the OS and map the IP to faveo.localhost domain name. The container is configured with Self Signed SSL certificates for the domainname faveo.localhost. This cannot be changed.
+Copy the IP Address and edit the hosts file of the OS and map the IP to faveo.localhost domain name. The container is configured with Self Signed SSL certificates for the domainname faveo.localhost. This cannot be changed.
 
-After this you can visit the site in browser using the URL https://faveo.localhost
+Now you can visit the site in the browser using the URL https://faveo.localhost
 
-The database details are mentioned in the docker-compose file as Environment variable. Either use the deault credentials or you can modify the docker-compose accordingly. For Database Host you can use the container name "mysql" which is the DNS name of mysql container the docker daemon will resolve to its IP Address. 
+The database details are mentioned in the docker-compose file as the Environment variable. Either use the default credentials or you can modify the docker-compose accordingly. For Database Host, you can use the container name "mysql" which is the DNS name of MySQL container the docker daemon will resolve to its IP Address.
 
+The Apache container (faveoapp) is configured with all the required development tools like composer, npm, git etc. If you want to execute any commands you should enter into the container’s shell for that execute the below command.
 
-The Apache container (faveoapp) is configrued with all the required development tools like composer, npm, git etc. If you want to execute any commands you should enter into the containers shell for that execute the below command.
 
 To enter inside the container
 
@@ -42,4 +42,4 @@ To stop all containers run
 ```sh
 docker-compose down
 ```
-Bringing down the containers will not lead loss of data as html and mysql directories are configured for persistent storage.
+Bringing down the containers will not lead to loss of data as html and mysql directories are configured for persistent storage.
